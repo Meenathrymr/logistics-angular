@@ -1,0 +1,88 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div align="center">
+  <form #homeForm="ngForm" (ngSubmit)="onSubmitHome(homeForm)">
+    <div class="co-md-6">
+      <div id="ct1">
+        <label for="shipment_id">
+          <b>Shipment ID</b>
+        </label>
+        <input type="text" placeholder="Enter Shipment Id" name="shipment_id" [(ngModel)]="model.shipment_id" required>
+      </div>
+      <div>
+        <label for="start_date">
+          <b>Start Date</b>
+        </label>
+        <input type="text" placeholder="Enter Date" name="start_date" [(ngModel)]="model.start_date" required>
+      </div>
+      <div>
+        <label for="months">
+          <b> Months :</b>
+        </label>
+        <select placeholder="Select month" [(ngModel)]="model.month" name="month" (change)="getSelectedAddress(model.month)">
+          <option [ngValue]="null">Choose a state</option>
+          <option [ngValue]="month" *ngFor="let month of months">{{month}}</option>
+        </select>
+      </div>
+      <div>
+        <label for="end_date">
+          <b>End Date</b>
+        </label>
+        <input type="date" placeholder="End Date" name="end_date" [(ngModel)]="homeForm.end_date" required>
+      </div>
+      <div>
+        <label for="num_of_Stops">
+          <b>Number Of Stops</b>
+        </label>
+        <input type="text" placeholder="stops" name="num_of_Stops" [(ngModel)]="homeForm.num_of_Stops" required>
+      </div>
+      <div>
+        <label for="truck_number">
+          <b>Truck Number</b>
+        </label>
+        <input type="text" placeholder="Enter truck number" name="truck_number" [(ngModel)]="homeForm.truck_number" required>
+      </div>
+
+      <div>
+        <label for="driver_id">
+          <b>Driver Name</b>
+        </label>
+        <input type="text" placeholder="Enter driver name" name="driver_name" [(ngModel)]="homeForm.driver_name" required>
+      </div>
+      <div class="col-md-6">
+
+        <div>
+          <label for="weight">
+            <b>Total Weight</b>
+          </label>
+          <input type="text" placeholder="weight" name="total_weight" [(ngModel)]="homeForm.weight" required>
+        </div>
+
+        <div>
+          <label for="volume">
+            <b>Volume</b>
+          </label>
+          <input type="text" placeholder="volume" name="volume" [(ngModel)]="homeForm.volume" required>
+        </div>
+        <div>
+          <label for="start_location">
+            <b>Start Location</b>
+          </label>
+          <input type="text" placeholder="Enter start location" name="start_location" [(ngModel)]="homeForm.start_location" required>
+        </div>
+        <div>
+          <label for="end_location">
+            <b>End Location</b>
+          </label>
+          <input type="text" placeholder="Enter end location" name="end_location" [(ngModel)]="homeForm.end_location" required>
+        </div>
+      </div>
+    </div>
+    <button type="submit" value="Submit Details">Submit</button>
+  </form>
+
+</div>
